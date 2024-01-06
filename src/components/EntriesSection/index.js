@@ -12,6 +12,8 @@ export default function EntriesSection({
   onToggleFavorite,
   onShowAllEntries,
   onShowFavoriteEntries,
+  allEntriesCount,
+  favoriteEntriesCount,
 }) {
   return (
     <section className="entries-section">
@@ -21,14 +23,18 @@ export default function EntriesSection({
           onClick={onShowAllEntries}
           filter={filter}
         >
-          All Entries <Badge isActive={filter === "all"}>3</Badge>
+          All Entries{" "}
+          <Badge isActive={filter === "all"}>{allEntriesCount}</Badge>
         </Tab>
         <Tab
           onClick={onShowFavoriteEntries}
           filter={filter}
           isActive={filter === "favorites"}
         >
-          Favorites <Badge isActive={filter === "favorites"}>1</Badge>
+          Favorites{" "}
+          <Badge isActive={filter === "favorites"}>
+            {favoriteEntriesCount}
+          </Badge>
         </Tab>
       </Tabs>
       <div className="entries-section__entries">
