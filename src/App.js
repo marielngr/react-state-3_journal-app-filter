@@ -72,6 +72,7 @@ function App() {
         <EntryForm onAddEntry={handleAddEntry} />
         <EntriesSection
           entries={filter === "all" ? entries : favoriteEntries}
+          filter={filter}
           onToggleFavorite={handleToggleFavorite}
           onShowAllEntries={handleShowAllEntries}
           onShowFavoriteEntries={handleShowFavoriteEntries}
